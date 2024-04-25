@@ -1,0 +1,33 @@
+.cpcontent {
+    width: 450px;
+    height: 280px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.button4 {
+    height: 40px;
+    background: linear-gradient(to bottom, dodgerblue, royalblue);
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s, transform 0.1s;
+    outline: none;
+}
+
+.button4:hover {
+    background: linear-gradient(to bottom, royalblue, dodgerblue);
+    transform: translateY(-2px);
+}

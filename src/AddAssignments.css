@@ -1,0 +1,30 @@
+.uploadcontainer {
+    max-width: 300px;
+    margin: 2 auto;
+    padding:3;
+    border-radius: 2px;
+  }
+    .inpdddut[type="file"] {
+      padding: 9.5px;
+      border: none;
+      border-radius: 3px;
+      width: 90%;
+      cursor: pointer;
+    }
+  
+    .form .column {
+      display: flex;
+      column-gap: 15px;
+    }
+  
+  .containerplace {
+      position: absolute;
+      top:7%;
+      left:27%;
+      max-width: 600px;
+      width: 100%;
+      background: whitesmoke;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.767);
+    }

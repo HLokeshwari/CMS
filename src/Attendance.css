@@ -1,0 +1,108 @@
+strong {
+  font-size: 1.2rem;
+  color: black;
+  font-family: monospace;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #ececec;
+  margin: 1rem 0 2rem 0;
+}
+
+.attendcontainer-centered {
+  max-width: fit-content;
+  margin: auto;
+}
+
+.attendinput-container {
+  display: flex;
+  align-items: center;
+}
+
+.attendinput-container label {
+  color: hsla(0, 3%, 6%, 0.863);
+  background-color: #fafafa;
+  border: 1px solid #eaeaea;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.attendinput-container input {
+  border: 1px solid hsl(56, 63%, 59%);
+  height: 42px;
+  width: 100%;
+  padding: 0 1rem;
+  outline: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.attendinput-container input:focus {
+  border: 1px solid #888;
+}
+
+.attenduser-input-container {
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.attendpercentage-select-container {
+  margin-bottom: 1rem;
+  height: 42px;
+  max-width: 20rem;
+}
+
+.attendpercentage-select-container label {
+  width: 100%;
+}
+
+.attendpercentage-select {
+  height: 42px;
+  font-size: 1rem;
+  border: 1px solid hsl(204, 74%, 38%);
+  transition: all 0.3s ease;
+  background-color: transparent;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding: 0 0.5rem;
+}
+
+.attendpercentage-select:focus {
+  outline: none;
+}
+
+.attendcalculate-btn {
+  height: 42px;
+  width: 100%;
+  font-family: inherit;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.attendcalculate-btn:hover {
+  cursor: pointer;
+  opacity: 0.89;
+}
+
+.attendoutput-text {
+  color: hsl(0, 15%, 38%);
+  text-align: center;
+  font-size: 1rem;
+  margin: 1rem;
+}
+

@@ -1,0 +1,308 @@
+/* Controls/Logic */
+.tlabel,
+.tinput {
+    position: absolute;
+    top: -10vmin;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    width: 30vmin;
+    height: 52.5vmin;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.tinput:nth-child(6n + 2),
+.tinput:checked + .tinput + .tinput + .tlabel {
+    left: 0;
+}
+.tinput:nth-child(6n + 3),
+.tinput:checked + .tinput + .tlabel {
+    left: 30vmin;
+}
+.tinput:nth-child(6n + 4),
+.tinput:checked + .tlabel {
+    left: 60vmin;
+}
+
+.tlabel,
+.tinput:hover,
+.tinput[readonly]:focus + .tinput,
+.tinput[readonly]:focus + .tinput + .tinput,
+.tinput[readonly]:focus + .tinput + .tinput + .tinput {
+    pointer-events: initial;
+}
+.tinput[readonly],
+.tinput:nth-child(6n + 2):checked ~ .tinput:nth-child(6n + 2),
+.tinput:nth-child(6n + 3):checked ~ .tinput:nth-child(6n + 3),
+.tinput:nth-child(6n + 4):checked ~ .tinput:nth-child(6n + 4) {
+    pointer-events: none;
+}
+
+#one ~ .tinput,
+#one ~ .tlabel {
+    z-index: 6;
+}
+#two ~ .tinput,
+#two ~ .tlabel {
+    z-index: 5;
+}
+#three ~ .tinput,
+#three ~ .tlabel {
+    z-index: 4;
+}
+#four ~ .tinput,
+#four ~ .tlabel {
+    z-index: 3;
+}
+#five ~ .tinput,
+#five ~ .tlabel {
+    z-index: 2;
+}
+#six ~ .tinput,
+#six ~ .tlabel {
+    z-index: 1;
+}
+
+.tinput#zero {
+    z-index: 7;
+}
+.tinput#zero:focus {
+    pointer-events: none;
+}
+.tinput[readonly]:focus + .tinput:checked ~ #zero {
+    left: 0;
+    pointer-events: initial;
+}
+.tinput[readonly]:focus + .tinput + .tinput:checked ~ #zero {
+    left: 30vmin;
+    pointer-events: initial;
+}
+.tinput[readonly]:focus + .tinput + .tinput + .tinput:checked ~ #zero {
+    left: 60vmin;
+    pointer-events: initial;
+}
+
+/* Discs */
+.discs {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    margin: 10vmin auto 0;
+    width: 90vmin;
+    height: 35vmin;
+}
+
+.disc {
+    z-index: 1;
+    border-radius: 1vmin;
+    height: 4vmin;
+    pointer-events: none;
+    transition: order 0.3s step-end;
+}
+.tinput:checked + .tinput + .tinput + .tlabel + .disc {
+    order: 3;
+}
+.tinput:checked + .tinput + .tlabel + .disc {
+    order: 6;
+}
+.tinput:checked + .tlabel + .disc {
+    order: 9;
+}
+
+.tinput:focus + .tinput:checked + .tinput + .tinput + .tlabel + .disc {
+    order: 1;
+    transition: order 0s;
+    animation: float 3s ease-in-out infinite alternate;
+}
+.tinput:focus + .tinput + .tinput:checked + .tinput + .tlabel + .disc {
+    order: 4;
+    transition: order 0s;
+    animation: float 3s ease-in-out infinite alternate;
+}
+.tinput:focus + .tinput + .tinput + .tinput:checked + .tlabel + .disc {
+    order: 7;
+    transition: order 0s;
+    animation: float 3s ease-in-out infinite alternate;
+}
+@keyframes float {
+    50% {
+        transform: translateY(-1vmin);
+    }
+}
+
+.tinput:focus + .tinput:hover + .tinput + .tinput + .tlabel + .disc,
+.tinput + .tinput:active + .tinput + .tinput + .tlabel + .disc {
+    order: 1;
+}
+.tinput:focus + .tinput + .tinput:hover + .tinput + .tlabel + .disc,
+.tinput + .tinput + .tinput:active + .tinput + .tlabel + .disc {
+    order: 4;
+}
+.tinput:focus + .tinput + .tinput + .tinput:hover + .tlabel + .disc,
+.tinput + .tinput + .tinput + .tinput:active + .tlabel + .disc {
+    order: 7;
+}
+
+.one {
+    margin: 0 10vmin;
+    width: 10vmin;
+    background: linear-gradient(to right, #eea668, #ed7e1d, #e67e22);
+}
+.two {
+    margin: 0 8vmin;
+    width: 14vmin;
+    background: linear-gradient(to right, #8ac4ea, #0f9fff, #3498db);
+}
+.three {
+    margin: 0 6vmin;
+    width: 18vmin;
+    background: linear-gradient(to right, #f0d775, #fc0, #e6bd19);
+}
+.four {
+    margin: 0 4vmin;
+    width: 22vmin;
+    background: linear-gradient(to right, #666, #000, #333);
+}
+.five {
+    margin: 0 2vmin;
+    width: 26vmin;
+    background: linear-gradient(to right, #7ee2a8, #09f16a, #2ecc71);
+}
+.six {
+    width: 30vmin;
+    background: linear-gradient(to right, #f2a097, #ff3a24, #e74c3c);
+}
+
+/* Spacers/Separators */
+.spacer {
+    width: 30vmin;
+    height: 1px;
+    flex-grow: 0;
+    pointer-events: none;
+    transition: flex 0.3s;
+}
+.separator {
+    width: 0;
+    height: 100%;
+}
+.a {
+    order: 2;
+}
+.ab {
+    order: 3;
+}
+.b {
+    order: 5;
+}
+.bc {
+    order: 6;
+}
+.c {
+    order: 8;
+}
+
+.tinput[readonly]:focus + .tinput:hover ~ .a,
+.tinput[readonly]:focus + .tinput + .tinput:hover ~ .b,
+.tinput[readonly]:focus + .tinput + .tinput + .tinput:hover ~ .c {
+    transition: flex 0s;
+    flex-grow: 1;
+}
+.tinput[readonly]:focus + .tinput:checked ~ .a,
+.tinput[readonly]:focus + .tinput + .tinput:checked ~ .b,
+.tinput[readonly]:focus + .tinput + .tinput + .tinput:checked ~ .c {
+    flex-grow: 1;
+}
+
+/* Winning */
+.win {
+    z-index: 7;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10vmin;
+    bottom: -7.5vmin;
+    color: #966f33;
+    font-family: Arial, sans-serif;
+    font-size: 6vmin;
+    line-height: 17.5vmin;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+.tinput:nth-child(6n + 4):checked ~ .tinput:nth-child(6n + 4):checked ~ .tinput:nth-child(6n + 4):checked ~ .tinput:nth-child(6n + 4):checked ~ .tinput:nth-child(6n + 4):checked ~ .tinput:nth-child(6n + 4):checked ~ .win {
+    opacity: 1;
+    pointer-events: initial;
+}
+/* Everything Else */
+body {
+    margin: 0;
+    background-color: #f8f8f8;
+}
+
+h4 {
+    margin: 0;
+    padding: 5vmin;
+    color: rgba(0, 0, 0, 0.5);
+    font-family: Arial, sans-serif;
+    font-size: 7.5vmin;
+    font-weight: lighter;
+    text-align: center;
+    background: linear-gradient(to right, rgba(150, 111, 51, 0.4), rgba(150, 111, 51, 0.2)),
+    repeating-linear-gradient(to right, #eec487, #eec487 3vmin, #f3cf9a 3vmin, #f3cf9a 6vmin, #f8d8a2 6vmin, #f8d8a2 9vmin, #f1ca88 9vmin, #f1ca88 12vmin, #f4d09e 12vmin, #f4d09e 15vmin, #faddb0 15vmin, #faddb0 18vmin, #eec88a 18vmin, #eec88a 21vmin);
+}
+
+.towform {
+    text-align: center;
+}
+
+.tower {
+    position: absolute;
+    top: 7.5vmin;
+    border-radius: 1vmin;
+    width: 5vmin;
+    height: 30vmin;
+    background: linear-gradient(to right, #d7b889, #b27315, #966f33);
+}
+.a {
+    left: 12.5vmin;
+}
+.b {
+    left: 42.5vmin;
+}
+.c {
+    left: 72.5vmin;
+}
+
+.tbottom {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    border-radius: 1vmin;
+    width: 95vmin;
+    height: 7.5vmin;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.3), transparent),
+    linear-gradient(#b27315, #966f33 13%, #faddb0 14.5%, #faddb0 27.5%, #966f33 29%, #966f33 42%, #faddb0 43.5%, #d7b889 56.5%, #966f33 58%, #966f33 71%, #d7b889 72.5%, #d7b889 85.5%, #966f33 87%, #b27315);
+}
+
+.button5 {
+    margin: 7.5vmin auto;
+    border: none;
+    border-radius: 1vmin;
+    width: 35vmin;
+    height: 8vmin;
+    font-size: 4vmin;
+    color: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, #c39550, #966f33);
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.button5:hover {
+    background: linear-gradient(to right, #caa163, #a77b39);
+}
+.button5:active {
+    background: linear-gradient(to right, #cf9844, #9e6f29);
+}

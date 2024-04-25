@@ -1,0 +1,166 @@
+/* Game1.css */
+
+.guess-the-number {
+  text-align: center;
+  margin: 50px auto;
+}
+
+h1 {
+  color: #333;
+}
+
+p {
+  margin: 10px 0;
+  color: #777;
+  font-size: 12pt;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: #f0eaea;
+  border: none;
+  cursor: pointer;
+}
+
+.button1 {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.button1:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button1:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button1:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.card {
+  width: 300px;
+  height: 150px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  color: #fff;
+  font-size: 16px; /* Set font size for readability */
+}
+
+.front {
+  background-color: #e74c3c; /* Red for wrong answer */
+}
+
+.back {
+  background-color: #00ff6a; /* Green for correct answer */
+  transform: rotateY(180deg);
+}
+
+.card-container:hover .card {
+  transform: perspective(1000px) rotateY(180deg);
+}
+
+/* Additional styles for the correct result card */
+.correct-result-card .front {
+  background-color: #00ff6a; /* Green for correct answer */
+}
+
+.correct-result-card .back {
+  background-color: #00ff6a; /* Green for correct answer */
+  transform: rotateY(180deg);
+}
+
+/* Additional styles for the try again card */
+.try-again-card .front {
+  background-color: #e74c3c; /* Red for wrong answer */
+}
+
+.try-again-card .back {
+  background-color: #00ff6a; /* Green for correct answer */
+  transform: rotateY(180deg);
+}
+
+/* Add the following CSS for the visibility of front and back sides */
+.try-again-card .front {
+  transform: rotateY(0deg);
+}
+
+.try-again-card .back {
+  transform: rotateY(180deg);
+}
+
+/* Add the following CSS for handling visibility based on the 'visible' class */
+.try-again-card.visible .front {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.try-again-card.visible .back {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.5s, opacity 0.5s ease-in-out;
+}

@@ -1,0 +1,170 @@
+.containerplace {
+  top: 7%;
+  left: 12%;
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  background: linear-gradient(white); /* Transparent gradient background */
+  padding: 25px;
+  border-radius: 20px; /* Increased border radius for a more rounded look */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increased shadow for depth */
+}
+
+.containerplace header {
+  font-size: 1rem; /* Larger font size for header */
+  color: #333; /* Slightly darker color for better readability */
+  font-weight: 800; /* Increased font weight for emphasis */
+  text-align: center;
+  margin-bottom: 20px; /* Adjusted bottom margin for separation */
+  text-transform: uppercase; /* Convert text to uppercase for a neat appearance */
+  letter-spacing: 2px; /* Increased letter spacing for better readability */
+}
+
+
+.containerplace .form {
+  margin-top: 30px; /* Increased top margin for better spacing */
+}
+
+.form .input-box {
+  width: 100%;
+  margin-top: 20px; /* Increased top margin for better spacing */
+}
+
+.input-box label {
+  color: #555; /* Darker color for label */
+  font-weight: 600; /* Increased font weight for label */
+}
+
+.input-box select,
+.input-box input {
+  width: 100%;
+  height: 50px; /* Increased input height for better usability */
+  outline: none;
+  font-size: 1.1rem; /* Larger font size for input */
+  color: #444; /* Slightly darker color for better contrast */
+  margin-top: 10px; /* Adjusted top margin for spacing */
+  border: 2px solid #ccc; /* Lighter border color */
+  border-radius: 12px; /* Increased border radius for a more rounded look */
+  padding: 0 20px; /* Increased padding for better spacing */
+  background: rgba(247, 247, 247, 0.9); /* Transparent background */
+  transition: border-color 0.3s ease; /* Smooth transition for input focus */
+}
+
+.input-box select:focus,
+.input-box input:focus {
+  border-color: #2ecc71; /* Green border color on focus */
+}
+
+.form .column {
+  display: flex;
+  flex-direction: column; /* Adjusted to column layout for better alignment */
+  row-gap: 20px; /* Increased row gap for better spacing */
+}
+
+.form button {
+  height: 40px; /* Increased button height for better visibility and usability */
+  width: 100%;
+  color: #fff;
+  font-size: 1.2rem; /* Larger font size for button text */
+  font-weight: 700; /* Increased font weight for button text */
+  margin-top: 30px; /* Increased top margin for better spacing */
+  border: none;
+  border-radius: 12px; /* Increased border radius for a more rounded look */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for button hover */
+  background: rgba(9, 235, 103, 0.9); /* Transparent green background */
+}
+
+.form button:hover {
+  background: hwb(35 3% 2% / 0.902); /* Darker green color on button hover */
+}
+.table-course {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-course th,
+.table-course td {
+  padding: 12px; /* Adjust padding for better spacing within cells */
+  border: 1.6px solid #6cd707; /* Add border to separate cells */
+  text-align: center;
+}
+
+.table-course th {
+  background-color: hsl(133, 94%, 50%); /* Background color for table headers */
+  font-weight: bold; /* Bold font for table headers */
+}
+
+/* Optional: Add hover effect to table rows */
+.table-course tbody tr:hover {
+  background-color: #f5f5f5; /* Light gray background color on hover */
+}
+
+/* upload */
+.timetable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px; /* Added margin to the table for better separation */
+}
+
+.timetable th,
+.timetable td {
+  padding: 20px; /* Increased padding for better spacing within the table */
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.time-slot {
+  font-weight: bold;
+}
+
+
+/*certificate*/
+.containercer {
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.containercer header {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.cerform {
+  display: flex;
+  flex-direction: column;
+}
+
+.cercolumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.cerinput-box {
+  margin-bottom: 20px;
+}
+
+.cerinput-box label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cerinput-box select,
+.cerinput-box input {
+  width: 100%; /* Set width to 100% */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.cerinput-box select:focus,
+.cerinput-box input:focus {
+  outline: none;
+  border-color: rgb(11, 242, 100);
+}
+
