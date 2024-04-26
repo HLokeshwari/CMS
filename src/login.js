@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import logo from './images/logo.jpg';
 import './index.css'
 import { callApi, errorResponse, setSession } from './main';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const popupwindowstyle = { width: '300px', height: '450px', background: 'white' };
 const forgotwindowstyle = { width: '300px', height: '450px', background: 'white' };
@@ -10,6 +11,9 @@ const logodivstyle = { height: '100px' };
 const space = { height: '10px' };
 
 function Login() {
+    const onChange=() =>{
+        
+    };
     const [showLoginPopup, setShowLoginPopup] = useState(true);
 
     const toggleLoginPopup = () => {
@@ -123,6 +127,8 @@ function Login() {
                             </div>
                             <div style={space}></div>
                             <div style={space}></div>
+                            <ReCAPTCHA sitekey="6LffyscpAAAAAO4qV_Vs96wsrGAYnqQCK78nlF3b"
+                             onChange={onChange}/>
                             <div>
                                 <button className='btn' onClick={validate}>
                                     Sign In

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Login from './login';
 import Home from './home'
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import {BrowserRouter,Routes,Route,useLocation} from 'react-router-dom'
 import SnakeGame from './SnakeGame';
 import GuessTheNumber from './GuessTheNumber';
 
@@ -36,6 +36,43 @@ import Facultyreg from './facultyreg';
 import AddAssignments from './AddAssignments';
 import Attendancecal from './Attendancecal.js';
 import Time from './Time.js';
+
+
+function ChatWidget() {
+  const location = useLocation();
+
+  React.useEffect(() => {
+    // Check if the current path is allowed for the chat widget
+    const isChatWidgetAllowed = () => {
+      const allowedRoutes = ['/', '/admin', '/home', '/adminhome', '/login', '/adminlogin'];
+      return allowedRoutes.includes(location.pathname);
+    };
+
+    // Load the chat widget script if the current path is allowed
+    if (isChatWidgetAllowed()) {
+      (function (d, m) {
+        var kommunicateSettings =
+          {
+            "appId": "2b45633994a0c7b960a949d3b0ec33c45",
+            "popupWidget": true,
+            "automaticChatOpenOnNavigation": true
+          };
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0];
+        h.appendChild(s);
+        window.kommunicate = m;
+        m._globals = kommunicateSettings;
+      })(document, window.kommunicate || {});
+    }
+  }, [location.pathname]);
+
+  return null;
+}
+
+
 
 function Website(){
   return(
@@ -84,11 +121,15 @@ function Website(){
         <Route path="/Changepwd" element={<Changepwd/>}></Route>
         <Route path="/Attendancecal" element={<Attendancecal/>}></Route>
         <Route path="/Time" element={<Time/>}></Route>
+
       
 
 
       </Routes>
+      <ChatWidget />
+
     </BrowserRouter>
+    
   );
 }
 
