@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import logo from './images/logo.jpg';
 import './index.css';
 import { callApi, errorResponse, setSession } from './main';
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 const popupwindowstyle = { width: '300px', height: '450px', background: 'white' };
 const logostyle = { width: '75px', height: '75px', position: 'absolute', left: '115px', top: '10px' };
@@ -9,6 +11,9 @@ const logodivstyle = { height: '100px' };
 const space = { height: '10px' };
 
 function Admin() {
+    const onChange=() =>{
+        
+    };
     const [showLoginPopup] = useState(true);
 
     const handleKeyPress = (event) => {
@@ -44,7 +49,7 @@ function Admin() {
         <div className='full-height' onKeyPress={handleKeyPress}>
             <div className='loginheader'>
                 <div className="kl-university-loginheader" style={{ float: 'left', marginLeft: '4px', marginTop: '1px' }}>
-                    KL University
+                    Student Course Management System
                 </div>
             </div>
             <div id='content' className='logincontent'>
@@ -66,6 +71,8 @@ function Admin() {
                             </div>
                             <div style={space}></div>
                             <div style={space}></div>
+                            <ReCAPTCHA sitekey="6LffyscpAAAAAO4qV_Vs96wsrGAYnqQCK78nlF3b"
+                             onChange={onChange}/>
                             <div>
                                 <button className='btn' onClick={validate}>
                                     Sign In
