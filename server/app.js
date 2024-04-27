@@ -5,7 +5,15 @@ const fileupload = require('express-fileupload');
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin:[" "],
+        methods:["POST","GET"],
+        credentials:true
+    }
+        
+        
+));
 app.use(fileupload());
 
 const PORT = process.env.PORT || 5000;
